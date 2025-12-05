@@ -342,3 +342,53 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
+/* GPS Accuracy Styles */
+.ip-location-marker {
+    filter: sepia(1) hue-rotate(180deg) opacity(0.8);
+}
+
+.gps-high-accuracy {
+    animation: pulseGreen 2s infinite;
+}
+
+.gps-medium-accuracy {
+    animation: pulseOrange 2s infinite;
+}
+
+.gps-low-accuracy {
+    animation: pulseRed 2s infinite;
+}
+
+@keyframes pulseGreen {
+    0% { opacity: 0.7; }
+    50% { opacity: 1; }
+    100% { opacity: 0.7; }
+}
+
+@keyframes pulseOrange {
+    0% { opacity: 0.6; }
+    50% { opacity: 0.9; }
+    100% { opacity: 0.6; }
+}
+
+@keyframes pulseRed {
+    0% { opacity: 0.5; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.5; }
+}
+
+/* Manual Location Button */
+.manual-location-btn {
+    background: linear-gradient(135deg, #9C27B0 0%, #673AB7 100%);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 14px;
+}
+
+.manual-location-btn:hover {
+    opacity: 0.9;
+}
