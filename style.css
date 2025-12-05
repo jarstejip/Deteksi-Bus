@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.user-id {
+    background: rgba(255,255,255,0.2);
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 15px;
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+/* STATUS BOX */
+.status-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border-left: 6px solid #2196F3;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.status-box h3 {
+    color: #2196F3;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#statusText {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+#gpsInfo {
+    margin-top: 10px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* MAP */
+#map {
+    height: 65vh;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    margin-bottom: 25px;
+    border: 3px solid white;
+}
+
+/* CONTROLS */
+.controls {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 180px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #43A047 0%, #1B5E20 100%);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #2196F3 0%, #0D47A1 100%);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #1E88E5 0%, #1565C0 100%);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #ff9800 0%, #ef6c00 100%);
+    color: white;
+}
+
+.btn-warning:hover {
+    background: linear-gradient(135deg, #fb8c00 0%, #e65100 100%);
+}
+
+/* DASHBOARD */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    color: #764ba2;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* DRIVER LIST */
+.driver-list {
+    max-height: 250px;
+    overflow-y: auto;
+    border-radius: 8px;
+    background: #f8f9fa;
+}
+
+.driver-item {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s;
+}
+
+.driver-item:hover {
+    background: #e3f2fd;
+}
+
+.driver-item:last-child {
+    border-bottom: none;
+}
+
+.driver-plate {
+    font-weight: bold;
+    color: #2196F3;
+    background: #e3f2fd;
+    padding: 3px 10px;
+    border-radius: 4px;
+}
+
+.driver-distance {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.driver-time {
+    color: #888;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+/* INFO PANEL */
+#infoPanel p {
+    margin: 10px 0;
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    display: flex;
+    justify-content: space-between;
+}
+
+#infoPanel p:last-child {
+    border-bottom: none;
+}
+
+/* INSTRUCTIONS */
+.instructions {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.instructions h3 {
+    color: #4CAF50;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.instructions ol {
+    margin-left: 20px;
+    line-height: 1.8;
+}
+
+.instructions li {
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 0.9rem;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+#connectionStatus {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+#updateTime {
+    color: #2196F3;
+    font-family: monospace;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .btn {
+        min-width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .controls {
+        flex-direction: column;
+    }
+    
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+    
+    #map {
+        height: 50vh;
+    }
+}
+
+/* ANIMATIONS */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+/* CUSTOM MAP MARKERS */
+.leaflet-marker-icon {
+    filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.3));
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

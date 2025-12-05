@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Tracker RealTime</title>
+    
+    <!-- Leaflet CSS (Peta) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Firebase SDK (CDN) -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/3097/3097143.png">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚌 Bus & Angkot Tracker</h1>
+            <p>Lacak kendaraan umum di sekitarmu secara realtime</p>
+            <div class="user-id">ID: <span id="userId">Loading...</span></div>
+        </header>
+        
+        <div class="status-box" id="statusBox">
+            <h3>📡 Status Sistem</h3>
+            <div id="statusText">Mendeteksi lokasi Anda...</div>
+            <div id="gpsInfo"></div>
+        </div>
+        
+        <div id="map"></div>
+        
+        <div class="controls">
+            <button class="btn btn-primary" onclick="toggleDriverMode()" id="driverBtn">
+                🚗 Jadi Driver
+            </button>
+            <button class="btn btn-secondary" onclick="findNearbyVehicles()">
+                🔍 Cari Kendaraan Dekat
+            </button>
+            <button class="btn btn-secondary" onclick="showRoute('D01')">
+                🗺️ Rute D01
+            </button>
+            <button class="btn btn-warning" onclick="clearAllData()">
+                🗑️ Reset Data
+            </button>
+        </div>
+        
+        <div class="dashboard">
+            <div class="card">
+                <h3>🔄 Kendaraan Aktif</h3>
+                <div class="driver-list" id="driverList">
+                    <div class="driver-item">
+                        <span>Loading data...</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>📊 Informasi</h3>
+                <div id="infoPanel">
+                    <p><strong>Jarak deteksi:</strong> 2 km</p>
+                    <p><strong>Update setiap:</strong> 10 detik</p>
+                    <p><strong>Total driver:</strong> <span id="totalDrivers">0</span></p>
+                    <p><strong>Dalam radius:</strong> <span id="nearbyCount">0</span></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>📝 Cara Pakai</h3>
+            <ol>
+                <li>Izinkan akses <strong>lokasi GPS</strong> saat browser minta</li>
+                <li>Klik <strong>"Jadi Driver"</strong> jika Anda sopir angkot/bus</li>
+                <li>Klik <strong>"Cari Kendaraan Dekat"</strong> untuk melihat yang sekitar 1km</li>
+                <li>Marker biru = lokasi Anda, Marker merah = kendaraan</li>
+                <li>Klik marker untuk info detail</li>
+            </ol>
+        </div>
+        
+        <footer>
+            <p>© 2024 Bus Tracker Indonesia | 
+                <span id="connectionStatus">🟢 Terhubung ke Firebase</span> | 
+                <span id="updateTime">-</span>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="firebase-config.js"></script>
+    <script src="app.js"></script>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</body>
+</html>
